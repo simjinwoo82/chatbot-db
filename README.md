@@ -10,7 +10,7 @@ Hugging Face Inference API를 활용하여 사용자의 질문에 한국어로 �
 | 구분 | URL |
 | --- | --- |
 | Frontend | [https://two026-chatbot-frontend-465s.onrender.com](https://two026-chatbot-frontend-465s.onrender.com) |
-| Backend API | [https://chatbot-pxte.onrender.com](https://chatbot-pxte.onrender.com) |
+| Backend API | [https://chatbot-db-back-c5t2.onrender.com](https://chatbot-db-back-c5t2.onrender.com) |
 
 > ⚠️ Render 무료 플랜(Free)을 사용 중이라, 백엔드가 일정 시간 미사용 시 슬립 상태로 전환됩니다.  
 > 슬립 상태에서 첫 요청을 보내면 서버가 다시 깨어나기까지 최대 1분 정도 응답이 지연될 수 있습니다.
@@ -20,14 +20,15 @@ Hugging Face Inference API를 활용하여 사용자의 질문에 한국어로 �
 ## 🛠️ 기술 스택 (Tech Stack)
 
 ### Backend
-- **Python 3.14+**
-- **FastAPI**
-- **Uvicorn**
-- **Hugging Face Inference API** (Qwen/Qwen3-4B-Instruct)
+- **Python 3.14**
+- **FastAPI** 0.141
+- **Uvicorn** 0.52
+- **SQLite** (대화 세션/메시지 저장, `db.py`)
+- **Hugging Face Inference API** (Qwen/Qwen3-4B-Instruct-2507)
 
 ### Frontend
-- **React 19**
-- **Vite**
+- **React** 19.2
+- **Vite** 8.2
 - **CSS3**
 
 ---
@@ -38,9 +39,11 @@ Hugging Face Inference API를 활용하여 사용자의 질문에 한국어로 �
 chatbot/
 ├── backend/
 │   ├── .env.example
+│   ├── db.py
 │   ├── main.py
 │   └── requirements.txt
 ├── frontend/
+│   ├── public/
 │   ├── src/
 │   │   ├── App.jsx
 │   │   ├── index.css
@@ -89,7 +92,7 @@ npm run dev
 
 브라우저에서 `http://localhost:5173`으로 접속하여 챗봇을 사용할 수 있습니다.
 
-> 로컬에서 프론트엔드를 실행하면 `frontend/src/App.jsx`에 설정된 배포된 백엔드 주소(`https://chatbot-pxte.onrender.com`)로 요청이 전송됩니다.  
+> 로컬에서 프론트엔드를 실행하면 `frontend/src/App.jsx`에 설정된 배포된 백엔드 주소(`https://chatbot-db-back-c5t2.onrender.com`)로 요청이 전송됩니다.  
 > 로컬 백엔드(`http://localhost:8000`)를 사용하려면 `App.jsx`의 `API` 상수 주석을 바꿔주세요.
 
 ---
