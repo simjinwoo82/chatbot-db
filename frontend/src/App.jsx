@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 
 
-const API = "https://chatbot-db-back-c5t2.onrender.com";
-//const API = "http://localhost:8000";
+//const API = "https://chatbot-db-back-c5t2.onrender.com";
+const API = import.meta.env.VITE_API_URL ||"http://127.0.0.1:8000";
 
 // 렌더(Render) 무료 인스턴스는 일정 시간 요청이 없으면 슬립 상태가 되고,
 // 다음 요청 시 최대 약 50초 정도 재기동(cold start) 시간이 걸릴 수 있다.

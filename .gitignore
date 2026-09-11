@@ -6,6 +6,7 @@
 
 # Database
 *.db
+!backend/chat.db
 
 # Python
 __pycache__/
