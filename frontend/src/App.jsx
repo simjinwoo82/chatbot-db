@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 
 //const API = "http://localhost:8000/chat";
-const API = "https://two026-chatbot-backend.onrender.com/";
+const API = "https://chatbot-db-back-c5t2.onrender.com";
 //const API = "http://localhost:8000";
 
 export default function App() {
